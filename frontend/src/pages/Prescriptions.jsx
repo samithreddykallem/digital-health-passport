@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
-
-const API_URL = "http://localhost:8080/api/prescriptions";
+import API_URL from "../services/api";
+const API_URL_PRESCRIPTIONS = `${API_URL}/api/prescriptions`;
 
 const emptyForm = {
     title: "",

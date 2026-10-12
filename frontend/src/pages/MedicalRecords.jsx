@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
-
-const API_URL = "http://localhost:8080/api/medical-records";
+import API_URL from "../services/api";
+const API_URL_RECORDS = `${API_URL}/api/medical-records`;
 
 function MedicalRecords() {
     const [records, setRecords] = useState([]);

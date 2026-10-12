@@ -1,18 +1,20 @@
-const API_URL = "http://localhost:8080/api/profile";
 
-export const getProfile = async () => {
+import API_URL from "./api";
+
+export async function getProfile() {
     const token = localStorage.getItem("token");
 
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${API_URL}/api/profile`, {
         method: "GET",
         headers: {
-            "Authorization": `Bearer ${token}`
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
         }
     });
 
     if (!response.ok) {
-        throw new Error("Failed to load profile");
+        throw new Error(`Failed to load profile: HTTP ${response.status}`);
     }
 
-    return response.json();
-};
+    return await response.json();
+}
