@@ -15,8 +15,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins(
-                                "https://digital-health-passport-amber.vercel.app"
+                        .allowedOriginPatterns(
+                                "https://digital-health-passport-amber.vercel.app",
+                                "https://digital-health-passp-git-*-samith-reddys-projects-6a08c4e1.vercel.app"
                         )
                         .allowedMethods(
                                 "GET", "POST", "PUT", "PATCH",
